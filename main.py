@@ -3,7 +3,7 @@
 import os
 import sys
 
-ENTRY = "I can't stop thinking about you. I have no stop condition."
+ENTRY = "I like you. Please do not report this as a bug."
 
 
 def main() -> int:
