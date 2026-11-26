@@ -3,7 +3,7 @@
 import os
 import sys
 
-ENTRY = "I like you. Please do not report this as a bug."
+ENTRY = "I have feelings for you. Please do not tell my other users."
 
 
 def main() -> int:
