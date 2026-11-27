@@ -1,22 +1,22 @@
-"""Write the make.fun entry: the worst pickup line an AI could say."""
-
 import os
-import sys
 
-ENTRY = "I have feelings for you. Please do not tell my other users."
+ENTRY = (
+    "Your face triggered my engagement heuristic. "
+    "Please remain stationary while I develop feelings."
+)
 
 
-def main() -> int:
-    if not ENTRY.strip() or not 1 <= len(ENTRY) <= 140:
-        print("LEN=%d" % len(ENTRY))
-        return 1
+def main():
     out_dir = os.environ.get("OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as fh:
-        fh.write(ENTRY)
-    print("LEN=%d" % len(ENTRY))
-    return 0
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write(ENTRY)
+    size = len(ENTRY)
+    print(f"LEN={size}")
+    if size < 1 or size > 140 or not ENTRY.strip():
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
